@@ -1,0 +1,23 @@
+﻿
+ install the management tools:
+
+rabbitmq-plugins enable rabbitmq_management
+N.B. rabbitmq-plugins is in C:\Program Files (x86)\RabbitMQ Server\rabbitmq_server-3.3.1\sbin
+
+Then, restart the RabbitMQ service.
+
+I then installed EasyNetQ in Visual Studio in the package manager:
+
+install-package easynetq
+With this installed, I could use the admin web site located at:
+
+http://localhost:15672
+N.B. The default username and password is: guest
+
+Select the Admin tab and the cause was clearly displayed in yellow at the top of the screen:
+
+This user does not have permission to access any virtual hosts.
+Use "Set Permission" below to grant permission to access virtual hosts. 
+To fix the issue I just pressed the Set permission button on the same screen et voila
+
+N.B. for this to have worked you need to have added the user using rabbitmqctl add_user username password or similar (rabbitmqctl is also in the directory above).

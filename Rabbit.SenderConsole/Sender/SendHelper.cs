@@ -13,7 +13,7 @@ namespace Sender
         public void SendMessage(string msg)
         {
 
-            var factory = new ConnectionFactory() { HostName = ConfigurationManager.AppSettings["RabbitServer"] };
+            var factory = new ConnectionFactory() { HostName = "10.0.0.10", Password = "Dan11Cy1", UserName = "danieli" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
